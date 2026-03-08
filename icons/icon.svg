@@ -1,9 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
-  <!-- Pin head -->
-  <circle cx="48" cy="32" r="20" fill="#0060df"/>
-  <circle cx="48" cy="32" r="9" fill="#fff"/>
-  <!-- Pin body -->
-  <polygon points="38,48 58,48 48,84" fill="#0060df"/>
-  <!-- Point highlight -->
-  <circle cx="48" cy="82" r="3" fill="#004ebc"/>
+  <!-- Cork board background -->
+  <rect x="4" y="4" width="88" height="88" rx="8" fill="#c4956a"/>
+  <rect x="4" y="4" width="88" height="88" rx="8" fill="url(#cork)" opacity="0.4"/>
+  <defs>
+    <!-- Cork texture pattern -->
+    <filter id="cork">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="2"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <!-- Pin shadow -->
+  <ellipse cx="50" cy="58" rx="10" ry="3" fill="rgba(0,0,0,0.15)"/>
+
+  <!-- Pin needle -->
+  <line x1="48" y1="48" x2="48" y2="72" stroke="#999" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Pin needle tip -->
+  <line x1="48" y1="68" x2="48" y2="74" stroke="#777" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Pin head - 3D pushpin dome -->
+  <circle cx="48" cy="36" r="18" fill="#e63946"/>
+  <!-- Highlight for 3D effect -->
+  <ellipse cx="43" cy="30" rx="8" ry="6" fill="#ff6b6b" opacity="0.6"/>
+  <!-- Top shine -->
+  <ellipse cx="41" cy="28" rx="4" ry="3" fill="#fff" opacity="0.45"/>
+  <!-- Rim shadow -->
+  <circle cx="48" cy="36" r="18" fill="none" stroke="#c1121f" stroke-width="1.5"/>
+  <!-- Center dimple -->
+  <circle cx="48" cy="38" r="3" fill="#c1121f" opacity="0.4"/>
 </svg>
