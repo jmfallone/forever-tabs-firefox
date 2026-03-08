@@ -19,4 +19,12 @@ browser.windows.onCreated.addListener(async (window) => {
     if (alreadyOpen) continue;
 
     await browser.tabs.create({ url, pinned: true, windowId: window.id });
-  }});
+  }
+
+  // Refocus the default new tab page so it's the active tab
+  const allTabs = await browser.tabs.query({ windowId: window.id });
+  const defaultTab = allTabs.find((tab) => !tab.pinned);
+  if (defaultTab) {
+    await browser.tabs.update(defaultTab.id, { active: true });
+  }
+});
