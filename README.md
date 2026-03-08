@@ -18,16 +18,29 @@ That's what Forever Tabs does.
 - If you close or unpin a forever-tab in a window, that's fine — it won't be forced back. But the next window you open will still have the full set
 - Handles session restore gracefully — no duplicate tabs
 
+## Build
+
+```bash
+./build.sh
+```
+
+This creates `forever-tabs-<version>.zip`, ready to upload to [addons.mozilla.org](https://addons.mozilla.org) or install manually.
+
 ## Install
 
-This extension is not yet on the Firefox Add-ons store. To install it manually:
+**From zip:**
 
-1. Open Firefox and navigate to `about:debugging`
-2. Click **"This Firefox"** in the left sidebar
-3. Click **"Load Temporary Add-on..."**
-4. Select the `manifest.json` file from this repo
+1. Run `./build.sh` to generate the zip
+2. Open Firefox → `about:addons` → gear icon → **"Install Add-on From File..."**
+3. Select the generated `.zip` file
 
-The extension will remain loaded until you restart Firefox. For persistent installation, the extension would need to be signed and published on [addons.mozilla.org](https://addons.mozilla.org).
+**For development:**
+
+1. Open Firefox → `about:debugging` → **"This Firefox"**
+2. Click **"Load Temporary Add-on..."**
+3. Select `manifest.json` from this repo
+
+Temporary add-ons are removed when Firefox restarts. For persistent installation, publish the zip to [addons.mozilla.org](https://addons.mozilla.org).
 
 ## Usage
 
